@@ -8,14 +8,17 @@ clearvars;
 LS = squeeze(DATA(:,:,:,6));  % extracts the average channel of the line spectrum
 I = squeeze(DATA(:,:,:,1));  % extracts the average current channel
 
-figure(1);
-image = LS(:,:,130);
-min = min(min(image));
-image = image - min;
-imagesc(image);
+for i=1:length(V)
+   % figure(1);
+    image = LS(:,:,i);
+    min1 = min(image,[],"all"); 
+    image = image - min1;
+ %   imagesc(image);
 
-figure(2);
-Y1 = fft2(image);
-imagesc(abs(fftshift(Y1)), [0 10e-10]);
-colorbar
+    figure(1);
+    Y1 = fft2(image);
+    imagesc(abs(fftshift(Y1)), [0 15e-10]);
+    colorbar
+    pause
+end
 
