@@ -11,13 +11,13 @@ I = squeeze(DATA(:,:,:,1));  % extracts the average current channel
 
 
 %make figure of the DOS plots
-for i = 1:length(V)
-      figure(1);
-      DIDV = LS(:,:,i);
-      imagesc(DIDV);
-      title({'dI/dV', num2str(V(i)), 'meV'})
-      pause
-end
+%for i = 1:length(V)
+%      figure(1);
+%      DIDV = LS(:,:,i);
+%      imagesc(DIDV);
+%      title({'dI/dV', num2str(V(i)), 'meV'})
+%      pause
+%end
 
 figure(2);
 image = LS(:,:,80);
@@ -46,7 +46,7 @@ end
 
 
 
-    %Save the coordinattes and pixel values to linecutData
+%Save the coordinattes and pixel values to linecutData
 %Making dI/dV spectrum
 %x = 150;
 %y = 150;
